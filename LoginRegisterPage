@@ -1,0 +1,57 @@
+import 'package:flutter/material.dart';
+
+import 'login_page.dart';
+
+class LoginRegisterPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        backgroundColor: Colors.white,
+        body: Center(
+          child: Column(
+            children: [
+              Container(
+                margin: EdgeInsets.fromLTRB(0, 200, 0, 100),
+                width: 180,
+                height: 150,
+                child: Image(image: AssetImage("images/logo.png")),
+              ),
+              Container(
+                margin: EdgeInsets.fromLTRB(0, 30, 0, 10),
+                width: MediaQuery.of(context).size.width * 0.85,
+                height: 40,
+                // ignore: deprecated_member_use
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.pushReplacement(context,
+                        MaterialPageRoute(builder: (_) {
+                      return LoginPage();
+                    }));
+                  },
+                  style: ElevatedButton.styleFrom(
+                      primary: Color(0xff46D1A7),
+                      shape: StadiumBorder(),
+                      textStyle:
+                          TextStyle(fontSize: 14, fontWeight: FontWeight.w500)),
+                  child: Text("Login"),
+                ),
+              ),
+              Container(
+                width: MediaQuery.of(context).size.width * 0.85,
+                height: 40,
+                child: OutlinedButton(
+                  onPressed: () {},
+                  style: OutlinedButton.styleFrom(
+                      primary: Color(0xff46D1A7),
+                      shape: StadiumBorder(),
+                      side: BorderSide(color: Color(0xff46D1A7), width: 3),
+                      textStyle:
+                          TextStyle(fontSize: 14, fontWeight: FontWeight.w500)),
+                  child: Text("Register"),
+                ),
+              ),
+            ],
+          ),
+        ));
+  }
+}
